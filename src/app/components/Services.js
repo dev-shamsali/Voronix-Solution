@@ -22,7 +22,7 @@ export default function Services() {
     },
     { 
       icon: Database, 
-      title: "Backend Engineering", 
+      title: "Backend Development", 
       desc: "Secure, cloud-ready, and optimized backend systems designed for reliability and long-term performance." 
     },
     { 

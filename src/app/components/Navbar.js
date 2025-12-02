@@ -118,8 +118,9 @@ export default function Navbar({ activeSection }) {
       </div>
 
       {/* Mobile Dropdown Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-slate-900 border-t border-slate-800 animate-slide-down">
+      
+        <div className={`md:hidden bg-slate-900 border-t border-slate-800 transition-all duration-500
+        ease-in-out ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
           {/* Normal Items */}
           {navItems.map((item) => (
             <div key={item.name} className="border-b border-slate-800">
@@ -173,7 +174,7 @@ export default function Navbar({ activeSection }) {
             </div>
           ))}
         </div>
-      )}
+    
     </nav>
   );
 }

@@ -8,6 +8,7 @@ import Projects from './components/Projects'
 import Services from './components/Services'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import FloatingWhatsApp from './components/FloatingWhatsApp'
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home')
@@ -41,6 +42,8 @@ export default function Home() {
       <Services />
       <Contact />
       <Footer />
+
+      <FloatingWhatsApp/>
     </main>
   )
 }

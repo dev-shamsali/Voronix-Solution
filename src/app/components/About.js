@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 
 export default function About() {
 
-  // Main animation settings
   const fadeUp = {
     hidden: { opacity: 0, y: 60 },
     show: {
@@ -65,6 +64,19 @@ export default function About() {
           </span>
         </motion.h2>
 
+
+        {/* New Paragraph Section */}
+        <motion.p
+          className="text-center text-slate-400 max-w-3xl mx-auto mb-16 text-lg leading-relaxed"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          At VORONIX Solutions, we combine creativity, modern development, and industry best practices to craft digital products that not only work — but perform. Our team focuses on delivering seamless user experiences, scalable backend systems, and secure architectures. Every project we build is powered by strategy, innovation, and a passion for technology.
+        </motion.p>
+
+
         {/* About Cards */}
         <motion.div
           className="grid md:grid-cols-3 gap-8 mb-20"
@@ -77,7 +89,7 @@ export default function About() {
             <motion.div
               key={idx}
               variants={fadeUp}
-              className="group relative bg-slate-900/60 border border-slate-800 hover:border-blue-500/50 
+              className="group relative bg-slate-900/60 border border-slate-800 hover:border-blue-500/50 \
               rounded-2xl p-8 transition-all duration-500 hover:shadow-[0_0_35px_#009DFF40]"
             >
               <div className="absolute inset-0 bg-linear-to-br from-[#00A8FF]/10 to-[#005DFF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
