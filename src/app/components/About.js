@@ -1,8 +1,27 @@
 'use client'
 
 import { Code2, Globe, Shield, Rocket, Cpu, Users } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function About() {
+
+  // Main animation settings
+  const fadeUp = {
+    hidden: { opacity: 0, y: 60 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut" }
+    }
+  }
+
+  const staggerContainer = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.18 }
+    }
+  }
+
   const sections = [
     {
       title: "Who We Are",
@@ -33,18 +52,31 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in">
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold text-center mb-16"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           About{" "}
           <span className="bg-linear-to-r from-[#00A8FF] via-[#24C9FF] to-[#005DFF] bg-clip-text text-transparent">
             VORONIX
           </span>
-        </h2>
+        </motion.h2>
 
         {/* About Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <motion.div
+          className="grid md:grid-cols-3 gap-8 mb-20"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {sections.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
+              variants={fadeUp}
               className="group relative bg-slate-900/60 border border-slate-800 hover:border-blue-500/50 
               rounded-2xl p-8 transition-all duration-500 hover:shadow-[0_0_35px_#009DFF40]"
             >
@@ -55,29 +87,44 @@ export default function About() {
                 <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
                 <p className="text-slate-400 leading-relaxed">{item.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Capabilities */}
-        <h3 className="text-3xl font-bold text-center mb-10">
+        {/* Capabilities Title */}
+        <motion.h3
+          className="text-3xl font-bold text-center mb-10"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           What{" "}
           <span className="bg-linear-to-r from-[#00A8FF] to-[#005DFF] bg-clip-text text-transparent">
             We Do
           </span>
-        </h3>
+        </motion.h3>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {/* Capabilities Grid */}
+        <motion.div
+          className="grid sm:grid-cols-2 md:grid-cols-4 gap-6"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {capabilities.map((cap, i) => (
-            <div
+            <motion.div
               key={i}
+              variants={fadeUp}
               className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center hover:border-blue-500/40 transition-colors"
             >
               <cap.icon className="w-10 h-10 mx-auto mb-3 text-blue-300" />
               <p className="text-slate-300 font-medium">{cap.name}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
       </div>
     </section>
   )

@@ -36,7 +36,7 @@ export default function Navbar({ activeSection }) {
               alt="logo"
               width={60}
               height={60}
-              className="drop-shadow-[0_0_10px_#00A8FF]"
+              className="drop-shadow-[0_0_10px_#00A8FF] object-contain"
             />
 
             <span className="text-xl font-bold bg-linear-to-r from-[#00A8FF] to-[#005DFF] bg-clip-text text-transparent pt-2">
